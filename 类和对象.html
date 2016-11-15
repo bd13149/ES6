@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+        speak() {
+            console.log(this.name + ' makes a noise.');
+        }
+    }
+    const animal = new Animal('animal');
+    animal.speak(); // animal makes a noise.
+
+    // 使用class语法让代码更加简洁和易于理解
+    // 避免使用空的构造函数。如果没有指定，类有一个默认的构造函数。？？？
+
+    var a = {a:1,b:2};
+    JSON.stringify(a);
+    console.log(a);
+</script>
+</body>
+</html>

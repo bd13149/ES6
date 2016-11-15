@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+<script>
+    // 引用的是外部的那个this
+    $('.btn').click((event) => this.sendData());
+
+    //隐式返回
+    const ids = [291,288,135];
+    const messages = ids.map(value => `ID is ${value}`);
+</script>
+</body>
+</html>

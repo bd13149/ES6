@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //es5
+//    var x = 'outer';
+//    function test(inner){
+//        if(inner){
+//            var x = 'inner';//作用域整个function
+//            return x;
+//        }
+//        return x;//因为第四行的声明提升，被重新定义
+//    }
+//    test(false);//undefined
+//    test(true);//inner
+
+    //初始化是不被提升的如果用var声明变量，请总放在顶部
+//    var x= 'outer';
+//    function test(inner){
+//        var x;
+//        if(inner){
+//            x = 'inner';//初始化不被提升
+//            return x;
+//        }
+//        return x;
+//    }
+
+    //使用let let 将变量提升到代码块的顶部
+    let x = 'outer';
+    function test(inner){
+        if(inner){
+            let x = 'inner';
+            return x;
+        }
+        return x; //从第一行获取到预期结果
+    }
+
+
+</script>
+如果你想要一个变量保持不变（常量），你也可以使用 const
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

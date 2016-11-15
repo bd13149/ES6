@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jiegou.js"></script>
+</head>
+<body>
+<script>
+    //从数组中获取元素
+    const array = [1, 2, 3, 4];
+    const [first, ,third] = array;
+    console.log(first, third);
+
+    // 交换值
+    let a = 1;
+    let b = 2;
+    [a,b] = [b, a];
+    console.log(a, b);
+
+    //多个返回值的解构
+//    function margin() {
+//        const left = 1, right = 2, top = 3, bottom = 4;
+//        return { left, right, top, bottom };
+//    }
+//    const {left,bottom} = margin();
+//    console.log(left, bottom);
+//
+//    // 参数匹配的解构
+//    const user = {firstName:'Anrian',lastName:'Mejia'};
+//    function getFullName({firstName,lastName}){
+//        return `${firstName} ${lastName}`;
+//    }
+//    console.log(getFullName(user));
+
+</script>
+</body>
+</html>

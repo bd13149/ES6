@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //es5
+//    function printAfterTimeout(string, timeout, done){
+//        setTimeout(function(){
+//            done(string);
+//        }, timeout);
+//    }
+//    printAfterTimeout('Hello ', 2e3, function(result){
+//        console.log(result);
+//        // nested callback
+//        // 不明白的
+//        printAfterTimeout(result + 'Reader', 2e3, function(result){
+//            console.log(result);
+//        });
+//    });
+
+
+    //es6
+
+    function printAfterTimeout(string, timeout){
+        return new Promise((resolve, reject) => {
+            setTimeout(function(){
+                resolve(string);
+            }, timeout);
+        });
+    }
+    printAfterTimeout('Hello ', 2e3).then((result) => {
+        console.log(result);
+        return printAfterTimeout(result + 'Reader', 2e3);
+    }).then((result) => {
+        console.log(result);
+    });
+//------------------------------------------------------------------
+    function helloWorld (ready) {
+        return new Promise(function (resolve, reject) {
+            if (ready) {
+                resolve("Hello World!");
+            } else {
+                reject("Good bye!");
+            }
+        });
+    }
+
+    helloWorld(true).then(function (message) {
+        alert(message);
+    }, function (error) {
+        alert(error);
+    });
+
+</script>
+在 Promise 对象当中有两个重要方法————resolve 和 reject。
+
+resolve 方法可以使 Promise 对象的状态改变成成功，同时传递一个参数用于后续成功后的操作，在这个例子当中就是 Hello World! 字符串。
+
+reject 方法则是将 Promise 对象的状态改变为失败，同时将错误的信息传递到后续错误处理的操作。
+</body>
+</html>
